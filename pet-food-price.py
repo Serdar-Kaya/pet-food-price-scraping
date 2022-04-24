@@ -14,7 +14,7 @@ def check_price():
     soup2 = BeautifulSoup(soup1.prettify(), "html.parser")
     title = soup2.find(class_ ='product-h1').get_text()
     price = soup2.find(class_ ='new-price').get_text()
-    price = price.strip()[:3]
+    price = int(price.strip()[:3])
     title = title.strip()[:25]
     import datetime
     today = datetime.date.today()
